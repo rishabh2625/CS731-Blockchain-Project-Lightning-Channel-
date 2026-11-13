@@ -1,0 +1,130 @@
+{
+  "method": "Unsigned public commitment reconstruction at hypothetical negotiated rates; Core observations reused from saved runs",
+  "source": "regtest/htlc_success.json",
+  "sensitivity": [
+    {
+      "rate_sat_per_kw": 1000,
+      "approx_target_sat_per_vb": 4.0,
+      "state": "no HTLC",
+      "untrimmed_htlcs": 0,
+      "base_fee_sat": 724,
+      "actual_commitment_fee_sat": 724,
+      "offered_htlc_threshold_sat": 1209,
+      "received_htlc_threshold_sat": 1249
+    },
+    {
+      "rate_sat_per_kw": 1000,
+      "approx_target_sat_per_vb": 4.0,
+      "state": "50,000-sat HTLC",
+      "untrimmed_htlcs": 1,
+      "base_fee_sat": 896,
+      "actual_commitment_fee_sat": 896,
+      "offered_htlc_threshold_sat": 1209,
+      "received_htlc_threshold_sat": 1249
+    },
+    {
+      "rate_sat_per_kw": 5000,
+      "approx_target_sat_per_vb": 20.0,
+      "state": "no HTLC",
+      "untrimmed_htlcs": 0,
+      "base_fee_sat": 3620,
+      "actual_commitment_fee_sat": 3620,
+      "offered_htlc_threshold_sat": 3861,
+      "received_htlc_threshold_sat": 4061
+    },
+    {
+      "rate_sat_per_kw": 5000,
+      "approx_target_sat_per_vb": 20.0,
+      "state": "50,000-sat HTLC",
+      "untrimmed_htlcs": 1,
+      "base_fee_sat": 4480,
+      "actual_commitment_fee_sat": 4480,
+      "offered_htlc_threshold_sat": 3861,
+      "received_htlc_threshold_sat": 4061
+    },
+    {
+      "rate_sat_per_kw": 10000,
+      "approx_target_sat_per_vb": 40.0,
+      "state": "no HTLC",
+      "untrimmed_htlcs": 0,
+      "base_fee_sat": 7240,
+      "actual_commitment_fee_sat": 7240,
+      "offered_htlc_threshold_sat": 7176,
+      "received_htlc_threshold_sat": 7576
+    },
+    {
+      "rate_sat_per_kw": 10000,
+      "approx_target_sat_per_vb": 40.0,
+      "state": "50,000-sat HTLC",
+      "untrimmed_htlcs": 1,
+      "base_fee_sat": 8960,
+      "actual_commitment_fee_sat": 8960,
+      "offered_htlc_threshold_sat": 7176,
+      "received_htlc_threshold_sat": 7576
+    },
+    {
+      "rate_sat_per_kw": 25000,
+      "approx_target_sat_per_vb": 100.0,
+      "state": "no HTLC",
+      "untrimmed_htlcs": 0,
+      "base_fee_sat": 18100,
+      "actual_commitment_fee_sat": 18100,
+      "offered_htlc_threshold_sat": 17121,
+      "received_htlc_threshold_sat": 18121
+    },
+    {
+      "rate_sat_per_kw": 25000,
+      "approx_target_sat_per_vb": 100.0,
+      "state": "50,000-sat HTLC",
+      "untrimmed_htlcs": 1,
+      "base_fee_sat": 22400,
+      "actual_commitment_fee_sat": 22400,
+      "offered_htlc_threshold_sat": 17121,
+      "received_htlc_threshold_sat": 18121
+    },
+    {
+      "rate_sat_per_kw": 100000,
+      "approx_target_sat_per_vb": 400.0,
+      "state": "no HTLC",
+      "untrimmed_htlcs": 0,
+      "base_fee_sat": 72400,
+      "actual_commitment_fee_sat": 72400,
+      "offered_htlc_threshold_sat": 66846,
+      "received_htlc_threshold_sat": 70846
+    },
+    {
+      "rate_sat_per_kw": 100000,
+      "approx_target_sat_per_vb": 400.0,
+      "state": "50,000-sat HTLC",
+      "untrimmed_htlcs": 0,
+      "base_fee_sat": 72400,
+      "actual_commitment_fee_sat": 122400,
+      "offered_htlc_threshold_sat": 66846,
+      "received_htlc_threshold_sat": 70846
+    }
+  ],
+  "policy_observations": [
+    {
+      "network": "regtest",
+      "core_version": "/Satoshi:28.1.0/",
+      "conflicting_spend_fee_sat": 500,
+      "descendant_fee_sat": 10000,
+      "timeout_fee_sat": 3315,
+      "timeout_vsize": 165,
+      "before_allowed": true,
+      "after_allowed": false,
+      "reject_reason": "insufficient fee"
+    },
+    {
+      "network": "private-signet",
+      "core_version": "/Satoshi:28.1.0/",
+      "conflicting_spend_fee_sat": 500,
+      "descendant_fee_sat": 10000,
+      "timeout_fee_sat": 3315,
+      "timeout_vsize": 165,
+      "before_allowed": true,
+      "after_allowed": false,
+      "reject_reason": "insufficient fee"
+    }
+  ]
+}

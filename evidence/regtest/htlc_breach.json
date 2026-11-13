@@ -1,0 +1,254 @@
+{
+  "scenario": "htlc_breach",
+  "network": "regtest",
+  "network_description": "Isolated regtest",
+  "nodes": [
+    {
+      "name": "alice",
+      "height": 239,
+      "tip": "315dc9c499fc00522b078940f1fdc03b17b5de9ddd391f6a4a759ddb8a02b742"
+    },
+    {
+      "name": "bob",
+      "height": 239,
+      "tip": "315dc9c499fc00522b078940f1fdc03b17b5de9ddd391f6a4a759ddb8a02b742"
+    }
+  ],
+  "core_version": "/Satoshi:28.1.0/",
+  "config": {
+    "capacity": 2000000,
+    "funding_txid": "29818925b2f66f04879baf2b98ae17816eed4c51393bf2edba2c6b2803f80a3a",
+    "funding_vout": 1,
+    "funder": "alice",
+    "initial_balances": {
+      "alice": 1000000,
+      "bob": 1000000
+    },
+    "public": {
+      "alice": {
+        "funding": "0308b1f6ee21bd5ea12f4a4c1d6e8757eab038f7e5a6e0c26da070d201c60aa5f8",
+        "payment": "03918c19ccb80b7f32dfe7fe4f90bb2afdb80ecabbb4af32d7e33788a59887ad33",
+        "delayed": "02b47f08058f2d36d812db2620a4790d79dc27db3a1a511e9e6431d96d3b1e46af",
+        "htlc": "03575ee429066fed0a904d05f2359fefe3e3c958d28c83a9b327a6878c8981e797",
+        "revocation": "0362dd6ff4aa6fcb8ee91a7240e2f771a6735d686760ac16a84280307e69b587fc"
+      },
+      "bob": {
+        "funding": "023772e725a9f2eb535db2350a43ca6935eb1fa07d6fd20de65345684ad58e7d51",
+        "payment": "035f0e8992dd77e84877537c62985dd4ef8298bb4cbc463f501c155711db67cba3",
+        "delayed": "0367889d4f0c5d0dca9eb8b1fd7748d22f0c1d16037591e98d5762b980edfc8c8f",
+        "htlc": "02950733567b104c6a2175f215e395447ce403e8311aee56ddd4157e2a2b022857",
+        "revocation": "03518f1a567a49c19253641ea73c016a7a65157db7f9d3bca423b6563cafdad7d1"
+      }
+    },
+    "delay": 6,
+    "dust": 546,
+    "feerate_per_kw": 5000
+  },
+  "states": [
+    {
+      "number": 0,
+      "balances": {
+        "alice": 1000000,
+        "bob": 1000000
+      },
+      "htlcs": [],
+      "next_id": 0,
+      "points": {
+        "alice": "020456adc22cd6634df5c6a79bccd820aa0c70630c74be53d296134fb45d590fc6",
+        "bob": "03b803125b3704c8481ce9c10cf756312e3a6964d6ac7356da14850d57baa88358"
+      }
+    },
+    {
+      "number": 1,
+      "balances": {
+        "alice": 1000000,
+        "bob": 950000
+      },
+      "htlcs": [
+        {
+          "id": 0,
+          "sender": "bob",
+          "amount": 50000,
+          "hash": "1a2e046840dfe5ac42af02becd4ffd82aa23bdda03554ae7a9add363600fbff0",
+          "expiry": 242
+        }
+      ],
+      "next_id": 1,
+      "points": {
+        "alice": "02615dc05c37cd1669d46dd93bda0d233bb1caf4b79166e47eba001593b56e843b",
+        "bob": "020bdcfc32923b1749e916a5c6cec2a3223e2493b4f8d6ccb8e2178c59a7cc6f40"
+      }
+    },
+    {
+      "number": 2,
+      "balances": {
+        "alice": 1050000,
+        "bob": 950000
+      },
+      "htlcs": [],
+      "next_id": 1,
+      "points": {
+        "alice": "02f4621cea43a450dfa0e6255e20ffbbe64d588fc68e49be448b692c8435c3c1dc",
+        "bob": "0350046d8c1764a802d743b6e1d9fd7b45aff676095cb2ae59961d37c316e4ddf1"
+      }
+    }
+  ],
+  "transactions": [
+    {
+      "label": "funding",
+      "hex": "02000000000101077f1a8c1127ca2054894beddb711ec506423fb65ac3379d3b7a1402fe1f73210000000000fdffffff02366ce729010000002251203af381a1be5539cf1f154a928494ac6c3db4e0eacc831290c283dae1808012ce80841e0000000000220020497b789c3054edba663d65bb55380a01ddfda63da60969bcb38aa7769f00dfae02473044022061a7ef08a227d0815798629baa2473b8852038e2a793cd98d7f0c719c45aa4a802207f5d82dfd90c85d61ad0919335ea0a82f8c02cdd9eaa3c1841fd60cd699b56bc01210384bf5af47b545b68b406b205fc73ebe1a14098cc1c55d4be26ed0c3532587f1e00000000",
+      "txid": "29818925b2f66f04879baf2b98ae17816eed4c51393bf2edba2c6b2803f80a3a",
+      "acceptance": {
+        "txid": "29818925b2f66f04879baf2b98ae17816eed4c51393bf2edba2c6b2803f80a3a",
+        "wtxid": "0fb275105400633631c3ad3fb23b573a3548a741b2041446f79f8317b947afe7",
+        "allowed": true,
+        "vsize": 165,
+        "fees": {
+          "base": 3.3e-06,
+          "effective-feerate": 2e-05,
+          "effective-includes": [
+            "0fb275105400633631c3ad3fb23b573a3548a741b2041446f79f8317b947afe7"
+          ]
+        }
+      },
+      "confirmations": 10,
+      "blockhash": "558aa94b3582bd1a27634d666ca56b3b702511d55a931149efae208570e9521f"
+    },
+    {
+      "label": "revoked_commitment",
+      "hex": "020000000001013a0af803286b2cbaedf23b39514ced6e8117ae982baf9b87046ff6b22589812901000000008bd032800350c300000000000022002058acba2cb1a49820926ebe434bfaacdbca7932eab6b53c79b26283a7323f7c2ef07e0e00000000001600145f11cd215b9af0ae0a282af222459ee7fbff1973c0300f00000000002200207d4030e23b18a89db8ab52cd04306dc5c7f34df62a5a806cdb151494698ccf5d0400483045022100a794205f0c31bcb76a7be3cfcd4e10510bf579850fa60ce6a76efaeb7e03d85302201ff1223aff7c34ca7ecfa4f22bd65cd0636f6756796964a660574317abc7fe0b0148304502210098e76dd1553d23b777f4fcd19b318cbd3aa6c82c5fc7f94e66f4891293c66f3602203a27f8d7d819a91b567635759f33c6e589e4c0c27d421db480b81ce88e9d430d01475221023772e725a9f2eb535db2350a43ca6935eb1fa07d6fd20de65345684ad58e7d51210308b1f6ee21bd5ea12f4a4c1d6e8757eab038f7e5a6e0c26da070d201c60aa5f852ae0dc18b20",
+      "txid": "a4f3fabf75b43245ce342cda60c3d4383010c20c400208488921fd0ba28a09d2",
+      "number": 1,
+      "vsize": 224,
+      "fee_sat": 4480,
+      "acceptance": {
+        "txid": "a4f3fabf75b43245ce342cda60c3d4383010c20c400208488921fd0ba28a09d2",
+        "wtxid": "f9b2086113944c7393a6290b11b3b024793be9cbbf8c9f6f44516e8cc5fe2d06",
+        "allowed": true,
+        "vsize": 224,
+        "fees": {
+          "base": 4.48e-05,
+          "effective-feerate": 0.0002,
+          "effective-includes": [
+            "f9b2086113944c7393a6290b11b3b024793be9cbbf8c9f6f44516e8cc5fe2d06"
+          ]
+        }
+      },
+      "confirmations": 9,
+      "blockhash": "1ab5e34bd790a02a4a9155a463875a7586a499444686b0144498f722083b1d48"
+    },
+    {
+      "label": "justice",
+      "hex": "02000000000101d2098aa20bfd2189480802400cc2103038d4c360da2c34ce4532b475bffaf3a40000000000fdffffff0168bf0000000000001600145f11cd215b9af0ae0a282af222459ee7fbff197303473044022004d17f9909f4d044e027e1443752d4a7810b92bb7459d6b1e8d45e0b9c02635002207b608a1a0e6b7c24a945eec1d962fce2ea1754132d8ac3b584729dc1ccde79f10121021ca914511fef514247f0947579dff7d91b651dfbb93c58d8e2df944cca39eb5b8a76a914138396ff6d94cf2ad9e0e87d8fe356356815af188763ac672103b7642eb1683382209a42e2907ad0701dee0b117329a66c46289d1bf3fb06c9e67c8201208763a91446bdfb9b02664c7ff124e204d8a8ce9b770fe5c688527c210321f7dd85dc71555407822868df1dd65e9ae8202feea02606dec770c85025531f52ae677502f200b175ac686800000000",
+      "txid": "1c3ddd77fc05b11eb8aaeee7bf750d575da2180b33b5136f70ab3c7031188c85",
+      "vsize": 144,
+      "acceptance": {
+        "txid": "1c3ddd77fc05b11eb8aaeee7bf750d575da2180b33b5136f70ab3c7031188c85",
+        "wtxid": "b0e5a6a877c9a94c329750a8da7b53a0cfc7aafd34c2055cd3873ff1ee9dd3ed",
+        "allowed": true,
+        "vsize": 144,
+        "fees": {
+          "base": 1e-05,
+          "effective-feerate": 6.944e-05,
+          "effective-includes": [
+            "b0e5a6a877c9a94c329750a8da7b53a0cfc7aafd34c2055cd3873ff1ee9dd3ed"
+          ]
+        }
+      },
+      "mode": "justice",
+      "confirmations": 8,
+      "blockhash": "66bb86c4329517cb50981a0976dc22e8402e07975d889a0455c8061ff1e7d16b"
+    },
+    {
+      "label": "justice",
+      "hex": "02000000000101d2098aa20bfd2189480802400cc2103038d4c360da2c34ce4532b475bffaf3a40200000000fdffffff01d82c0f00000000001600145f11cd215b9af0ae0a282af222459ee7fbff1973034830450221008b46f8da28827741b56b7f342201fc774bd219e20ba51166c4142ff971b1de4702206d46aa7f573be1e06572e303620b54975585996b78bb2a038febcaadae33d0e00101014b6321021ca914511fef514247f0947579dff7d91b651dfbb93c58d8e2df944cca39eb5b6756b275210331225d4eec42496511f894a3b09c6d4caab1196bd9da1d99c46e127d97a50e6c68ac00000000",
+      "txid": "634fa96889919dbd8e45b0ae693c6d2aa8911053b930c5d66e74e9ace1f8caae",
+      "vsize": 121,
+      "acceptance": {
+        "txid": "634fa96889919dbd8e45b0ae693c6d2aa8911053b930c5d66e74e9ace1f8caae",
+        "wtxid": "9403c12b53d309d6e78075842529ffbc4af290bc9410b6071e41de21611c8876",
+        "allowed": true,
+        "vsize": 121,
+        "fees": {
+          "base": 1e-05,
+          "effective-feerate": 8.264e-05,
+          "effective-includes": [
+            "9403c12b53d309d6e78075842529ffbc4af290bc9410b6071e41de21611c8876"
+          ]
+        }
+      },
+      "mode": "justice",
+      "confirmations": 8,
+      "blockhash": "66bb86c4329517cb50981a0976dc22e8402e07975d889a0455c8061ff1e7d16b"
+    },
+    {
+      "label": "remaining_main_output",
+      "hex": "02000000000101d2098aa20bfd2189480802400cc2103038d4c360da2c34ce4532b475bffaf3a40100000000fdffffff01087b0e00000000001600145f11cd215b9af0ae0a282af222459ee7fbff1973024830450221008feeb1f8aa8377779d3da808794156f1e191287f3e194198c77a1e1e0957f01802202080e83ba12335d2f2a3fa45f2991541ab1844c3b4d762853afda105f6cc7a8b0121035f0e8992dd77e84877537c62985dd4ef8298bb4cbc463f501c155711db67cba300000000",
+      "txid": "5c1dd1a17c3c2044a7372ffa898e0161a59f9a67ed93408a4dc103084a8604c8",
+      "vsize": 110,
+      "acceptance": {
+        "txid": "5c1dd1a17c3c2044a7372ffa898e0161a59f9a67ed93408a4dc103084a8604c8",
+        "wtxid": "572174a04ed1035a81a41c1aca8e1de5ea4cac7a5752b38d80cc9dc258fb0461",
+        "allowed": true,
+        "vsize": 110,
+        "fees": {
+          "base": 1e-05,
+          "effective-feerate": 9.09e-05,
+          "effective-includes": [
+            "572174a04ed1035a81a41c1aca8e1de5ea4cac7a5752b38d80cc9dc258fb0461"
+          ]
+        }
+      },
+      "confirmations": 1,
+      "blockhash": "315dc9c499fc00522b078940f1fdc03b17b5de9ddd391f6a4a759ddb8a02b742"
+    }
+  ],
+  "watcher": {
+    "status": "breach_responded",
+    "spend": {
+      "txid": "a4f3fabf75b43245ce342cda60c3d4383010c20c400208488921fd0ba28a09d2",
+      "height": 231,
+      "blockhash": "1ab5e34bd790a02a4a9155a463875a7586a499444686b0144498f722083b1d48"
+    },
+    "penalties": [
+      {
+        "hex": "02000000000101d2098aa20bfd2189480802400cc2103038d4c360da2c34ce4532b475bffaf3a40000000000fdffffff0168bf0000000000001600145f11cd215b9af0ae0a282af222459ee7fbff197303473044022004d17f9909f4d044e027e1443752d4a7810b92bb7459d6b1e8d45e0b9c02635002207b608a1a0e6b7c24a945eec1d962fce2ea1754132d8ac3b584729dc1ccde79f10121021ca914511fef514247f0947579dff7d91b651dfbb93c58d8e2df944cca39eb5b8a76a914138396ff6d94cf2ad9e0e87d8fe356356815af188763ac672103b7642eb1683382209a42e2907ad0701dee0b117329a66c46289d1bf3fb06c9e67c8201208763a91446bdfb9b02664c7ff124e204d8a8ce9b770fe5c688527c210321f7dd85dc71555407822868df1dd65e9ae8202feea02606dec770c85025531f52ae677502f200b175ac686800000000",
+        "txid": "1c3ddd77fc05b11eb8aaeee7bf750d575da2180b33b5136f70ab3c7031188c85",
+        "vsize": 144,
+        "acceptance": {
+          "txid": "1c3ddd77fc05b11eb8aaeee7bf750d575da2180b33b5136f70ab3c7031188c85",
+          "wtxid": "b0e5a6a877c9a94c329750a8da7b53a0cfc7aafd34c2055cd3873ff1ee9dd3ed",
+          "allowed": true,
+          "vsize": 144,
+          "fees": {
+            "base": 1e-05,
+            "effective-feerate": 6.944e-05,
+            "effective-includes": [
+              "b0e5a6a877c9a94c329750a8da7b53a0cfc7aafd34c2055cd3873ff1ee9dd3ed"
+            ]
+          }
+        },
+        "mode": "justice"
+      },
+      {
+        "hex": "02000000000101d2098aa20bfd2189480802400cc2103038d4c360da2c34ce4532b475bffaf3a40200000000fdffffff01d82c0f00000000001600145f11cd215b9af0ae0a282af222459ee7fbff1973034830450221008b46f8da28827741b56b7f342201fc774bd219e20ba51166c4142ff971b1de4702206d46aa7f573be1e06572e303620b54975585996b78bb2a038febcaadae33d0e00101014b6321021ca914511fef514247f0947579dff7d91b651dfbb93c58d8e2df944cca39eb5b6756b275210331225d4eec42496511f894a3b09c6d4caab1196bd9da1d99c46e127d97a50e6c68ac00000000",
+        "txid": "634fa96889919dbd8e45b0ae693c6d2aa8911053b930c5d66e74e9ace1f8caae",
+        "vsize": 121,
+        "acceptance": {
+          "txid": "634fa96889919dbd8e45b0ae693c6d2aa8911053b930c5d66e74e9ace1f8caae",
+          "wtxid": "9403c12b53d309d6e78075842529ffbc4af290bc9410b6071e41de21611c8876",
+          "allowed": true,
+          "vsize": 121,
+          "fees": {
+            "base": 1e-05,
+            "effective-feerate": 8.264e-05,
+            "effective-includes": [
+              "9403c12b53d309d6e78075842529ffbc4af290bc9410b6071e41de21611c8876"
+            ]
+          }
+        },
+        "mode": "justice"
+      }
+    ]
+  }
+}

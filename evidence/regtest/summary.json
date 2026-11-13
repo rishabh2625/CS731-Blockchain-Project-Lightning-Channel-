@@ -1,0 +1,66 @@
+{
+  "network": "regtest",
+  "private_signet": false,
+  "cases": [
+    {
+      "scenario": "honest_alice",
+      "result": "passed",
+      "transactions": 4
+    },
+    {
+      "scenario": "honest_bob",
+      "result": "passed",
+      "transactions": 4
+    },
+    {
+      "scenario": "breach_alice",
+      "result": "passed",
+      "transactions": 4
+    },
+    {
+      "scenario": "breach_bob",
+      "result": "passed",
+      "transactions": 4
+    },
+    {
+      "scenario": "htlc_success",
+      "result": "passed",
+      "transactions": 6
+    },
+    {
+      "scenario": "htlc_timeout",
+      "result": "passed",
+      "transactions": 6
+    },
+    {
+      "scenario": "htlc_direct_success",
+      "result": "passed",
+      "transactions": 5
+    },
+    {
+      "scenario": "htlc_direct_timeout",
+      "result": "passed",
+      "transactions": 5
+    },
+    {
+      "scenario": "htlc_breach",
+      "result": "passed",
+      "transactions": 5
+    },
+    {
+      "scenario": "second_stage_breach",
+      "result": "passed",
+      "transactions": 6
+    },
+    {
+      "scenario": "missed_window",
+      "result": "passed",
+      "transactions": 4
+    },
+    {
+      "scenario": "fee_obstruction",
+      "result": "passed",
+      "transactions": 6
+    }
+  ]
+}

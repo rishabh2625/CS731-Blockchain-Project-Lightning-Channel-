@@ -1,0 +1,6 @@
+{
+  "version": "28.1",
+  "url": "https://bitcoincore.org/bin/bitcoin-core-28.1/bitcoin-28.1-win64.zip",
+  "sha256": "2d636ad562b347c96d36870d6ed810f4a364f446ca208258299f41048b35eab0",
+  "verification": "SHA256 compared with official HTTPS manifest; release signatures not independently verified"
+}
